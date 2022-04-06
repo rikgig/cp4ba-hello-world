@@ -1,0 +1,121 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a hello API",
+    "version": "1.0.0",
+    "title": "Hello World API",
+    "contact": {
+      "email": "remi.cauchon@ibm.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "virtserver.swaggerhub.com",
+  "basePath": "/rcauchon/hello/1.0.0",
+  "tags": [
+    {
+      "name": "admins",
+      "description": "Secured Admin-only calls"
+    },
+    {
+      "name": "developers",
+      "description": "Operations available to regular developers"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/greeting": {
+      "get": {
+        "summary": "get greeting from api",
+        "description": "Adds an item to the system",
+        "operationId": "greeting",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "greeting from api",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Greeting"
+              }
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/hello": {
+      "get": {
+        "summary": "greet with a name",
+        "description": "By passing firstName and lastName, you will be greeted with fullName\n",
+        "operationId": "hello",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "firstName",
+            "in": "query",
+            "description": "pass an optional given firstName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "lastName",
+            "in": "query",
+            "description": "pass an optional given lastName",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "greet the new person with fullname",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FullName"
+              }
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Greeting": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Hello World!"
+        }
+      }
+    },
+    "FullName": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "example": "John Doe"
+        }
+      }
+    }
+  }
+}
