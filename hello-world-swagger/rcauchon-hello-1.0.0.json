@@ -12,8 +12,8 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "virtserver.swaggerhub.com",
-  "basePath": "/rcauchon/hello/1.0.0",
+  "host": "hello-rest-test-baw.itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud",
+  "basePath": "/",
   "tags": [
     {
       "name": "admins",
@@ -25,7 +25,6 @@
     }
   ],
   "schemes": [
-    "https",
     "http"
   ],
   "paths": {
