@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "817514f8-b930-413c-928a-992f76dc9948",
+		"name": "Hello World REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Greeting",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Hello John Doe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://hello-rest-test-baw.itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud/hello",
+					"protocol": "http",
+					"host": [
+						"hello-rest-test-baw",
+						"itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000",
+						"us-south",
+						"containers",
+						"appdomain",
+						"cloud"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello with Params",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://hello-rest-test-baw.itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud/hello?firstName=Remi&lastName=Cauchon",
+					"protocol": "http",
+					"host": [
+						"hello-rest-test-baw",
+						"itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000",
+						"us-south",
+						"containers",
+						"appdomain",
+						"cloud"
+					],
+					"path": [
+						"hello"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Remi"
+						},
+						{
+							"key": "lastName",
+							"value": "Cauchon"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

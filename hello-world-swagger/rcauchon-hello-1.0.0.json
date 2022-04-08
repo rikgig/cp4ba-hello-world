@@ -41,10 +41,7 @@
           "200": {
             "description": "greeting from api",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Greeting"
-              }
+              "$ref": "#/definitions/Greeting"
             }
           },
           "400": {
@@ -81,10 +78,7 @@
           "200": {
             "description": "greet the new person with fullname",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/FullName"
-              }
+              "$ref": "#/definitions/FullName"
             }
           },
           "400": {
@@ -97,9 +91,6 @@
   "definitions": {
     "Greeting": {
       "type": "object",
-      "required": [
-        "name"
-      ],
       "properties": {
         "name": {
           "type": "string",
