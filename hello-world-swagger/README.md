@@ -10,6 +10,8 @@ host: >-
 ```
 > This will be available after you have deploy your server code Hello-world REST API in the previous directory
 
+
+### The BAW Swagger server
 There is 2 Swagger server API unning on CP4BA related to Business Automation Workflow
 
 1. Documentation BAW Operations REST APIs
