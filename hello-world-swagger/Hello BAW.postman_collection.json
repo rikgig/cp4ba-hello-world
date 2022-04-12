@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "f3776446-a5c4-45d9-89d0-d25571d9cc0c",
+		"name": "Hello BAW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Process",
+			"item": [
+				{
+					"name": "Get proc Retrieve a list of proc Running",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "BPMCSRFToken",
+								"value": "{{collection.csrfToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{sbaseURL}}/processes?states=running",
+							"host": [
+								"{{sbaseURL}}"
+							],
+							"path": [
+								"processes"
+							],
+							"query": [
+								{
+									"key": "states",
+									"value": "running"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete proc Delete a process id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"process.id\", jsonData.processes[0].id);\r",
+									"\r",
+									"var token = pm.collectionVariables.get(\"process.id\")\r",
+									"\r",
+									"console.log(\"process.id: \"+token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "BPMCSRFToken",
+								"value": "{{collection.csrfToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{sbaseURL}}/processes/2072.4"
+					},
+					"response": []
+				},
+				{
+					"name": "Get proc Retrieve a list of proc Model/Container",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"process.id\", jsonData.processes[1].id);\r",
+									"\r",
+									"var token = pm.collectionVariables.get(\"process.id\")\r",
+									"\r",
+									"console.log(\"process.id: \"+token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "BPMCSRFToken",
+								"value": "{{collection.csrfToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/processes?model={{model}}&container={{container}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"processes"
+							],
+							"query": [
+								{
+									"key": "states",
+									"value": "running",
+									"disabled": true
+								},
+								{
+									"key": "model",
+									"value": "{{model}}"
+								},
+								{
+									"key": "container",
+									"value": "{{container}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post proc Start a new process instance.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "BPMCSRFToken",
+								"value": "{{collection.csrfToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": []\r\n}"
+						},
+						"url": {
+							"raw": "{{sbaseURL}}/processes?model={{model}}&container={{container}}",
+							"host": [
+								"{{sbaseURL}}"
+							],
+							"path": [
+								"processes"
+							],
+							"query": [
+								{
+									"key": "model",
+									"value": "{{model}}"
+								},
+								{
+									"key": "container",
+									"value": "{{container}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific process details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "BPMCSRFToken",
+								"value": "{{collection.csrfToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{baseURL}}/processes/{{process.id}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Task",
+			"item": [
+				{
+					"name": "Get user task by process id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"task.id\", jsonData.user_task_instances[0].id);\r",
+									"\r",
+									"var token = pm.collectionVariables.get(\"task.id\")\r",
+									"\r",
+									"console.log(\"task.id: \"+token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "BPMCSRFToken",
+								"value": "{{collection.csrfToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/user-tasks?model={{model}}&process_id=2072.26",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user-tasks"
+							],
+							"query": [
+								{
+									"key": "model",
+									"value": "{{model}}"
+								},
+								{
+									"key": "process_id",
+									"value": "2072.26"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post user task id Complete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "BPMCSRFToken",
+								"value": "{{collection.csrfToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"output\": []\r\n}"
+						},
+						"url": "{{sbaseURL}}/user-tasks/{{task.id}}/complete"
+					},
+					"response": []
+				},
+				{
+					"name": "Post user task id Claim",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "BPMCSRFToken",
+								"value": "{{collection.csrfToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/user-tasks?task_id={{task.id}}/claiim",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user-tasks"
+							],
+							"query": [
+								{
+									"key": "task_id",
+									"value": "{{task.id}}/claiim"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System",
+			"item": [
+				{
+					"name": "Get BPMCSRFToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"collection.csrfToken\", jsonData.csrf_token);\r",
+									"\r",
+									"var token = pm.collectionVariables.get(\"collection.csrfToken\")\r",
+									"\r",
+									"console.log(\"collection.csrfToken: \"+token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": "{{sbaseURL}}/system/login"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "m8eFfpLNe2Kya0ufsZrp",
+			"username": "cp4admin"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "collection.csrfToken",
+			"value": ""
+		},
+		{
+			"key": "process.id",
+			"value": ""
+		},
+		{
+			"key": "task.id",
+			"value": ""
+		}
+	]
+}
