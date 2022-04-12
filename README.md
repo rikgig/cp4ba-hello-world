@@ -9,7 +9,8 @@ In the directory hello-world-rest there is a small NodeJs application server whi
  *   /hello
  *   /hello?firstName=Remi&lastName=Cauchon
 
-Here the swagger view of the Hello World API
+Here the swagger view of the Hello World REST API
+
 ![cp4ba-hello-world](images/hello-world-rest-swagger.PNG)
 
 ### Deploy the nodejs Server on your Openshift Cluster
