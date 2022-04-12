@@ -4,10 +4,10 @@ This file **hello-world-openapi-1.0.0.json** is for the openapi available in the
 import the file on http:
 
 Replace the host by your endpoint cluster URL
-'''
+```
 host: >-
   hello-rest-test-baw.itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud
-'''
+```
 > This will be available after you have deploy your server code Hello-world REST API in the previous directory
 
 There is 2 Swagger server API unning on CP4BA related to Business Automation Workflow
