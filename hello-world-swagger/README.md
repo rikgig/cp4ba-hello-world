@@ -15,3 +15,9 @@ Documentation BAW Process REST APIs
 https://www.ibm.com/docs/en/baw/20.x?topic=apis-business-automation-workflow-process-rest
 
 ![cp4ba-hello-world/hello-world-swagger](images/baw-operations-rest-swagger.PNG)
+
+## POSTMAN directory
+
+The postman directory contain a workspace to load in your postman application
+
+Take a look at the postman files [here](/hello-world-swagger/postman/Readme.md)
