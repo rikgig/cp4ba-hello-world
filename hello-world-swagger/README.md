@@ -11,7 +11,7 @@ To access the swagger api
  
 To get the json doc format of the api **https://cluster_url//bpm/docs**
 
-![cp4ba-hello-world/hello-world-swagger](images/baw-operations-rest-swagger.PNG)
+![cp4ba-hello-world/hello-world-swagger](images/baw-processes-rest-swagger.PNG)
 
 2. Documentation BAW Process REST APIs
 
