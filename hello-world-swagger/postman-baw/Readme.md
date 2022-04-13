@@ -7,6 +7,8 @@ Import the file
 
 Theses files contains API request to the BAW process Rest API
 
-Set the baseURL to your cluster URL  /bpm
-Set the sbaseURL to your cluster URL /bpm
+* Set the *baseURL* to your cluster URL  add */bpm*
+* Set the *sbaseURL* to your cluster URL add */bpm*
+* Set the *model* to your workflow process name 
+* Set the *container* to your workflow process container name
 
