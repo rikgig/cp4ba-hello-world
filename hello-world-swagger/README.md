@@ -46,4 +46,4 @@ Summary of all methods available on the link below
 
 The postman directory contain a workspace to load in your postman application
 
-Take a look at the postman files [here](/hello-world-swagger/postman-baw/Readme.md)
+Take a look at the postman files [here](/hello-world-swagger/postman-baw)
