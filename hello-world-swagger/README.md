@@ -1,4 +1,4 @@
-﻿# Hello-World Swagger API and POSTMAN
+﻿# Hello-World Swagger API, BAW Swagger APIs and POSTMAN to test it
 
 This file **hello-world-openapi-1.0.0.json** is for the openapi available in the nodejs REST API server
 import the file on https://editor.swagger.io/
