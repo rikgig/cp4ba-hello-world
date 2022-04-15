@@ -9,7 +9,8 @@ $ docker run -i \
     -e MYSQL_PASSWORD=demo123 \
     -e MYSQL_DATABASE=sampledb \
     -t cytopia/mysql-5.7
-
+Reference
+https://hub.docker.com/r/cytopia/mysql-5.7/
 
 $ mysql -u root -p
 mysql> CREATE USER 'demo'@'localhost' IDENTIFIED BY 'demo123';
