@@ -1,3 +1,19 @@
+
+Docker on my desktop
+$ docker pull cytopia/mysql-5.7
+
+$ docker run -i \
+    -p 127.0.0.1:3306:3306 \
+    -e MYSQL_ROOT_PASSWORD=root123 \
+    -t cytopia/mysql-5.7
+
+
+$ mysql -u root -p
+mysql> CREATE USER 'demo'@'localhost' IDENTIFIED BY 'demo123';
+
+mysql> CREATE DATABASE sampledb;
+mysql> GRANT ALL PRIVILEGES ON sampledb.* TO 'demo'@'localhost';
+
 mysql> use sampledb
 Database changed
 mysql> show create table USAGER;
@@ -27,3 +43,15 @@ mysql> show create table  CUSTOMER;
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 1 row in set (0.00 sec)
+
+Create USAGER
+Demo USAGER
+INSERT INTO USAGER VALUES('john.doe@test.com','John Doe','demo123');
+INSERT INTO USAGER VALUES('jane.doe@test.com','Jane Doe','demo123');
+INSERT INTO USAGER VALUES('corben.buxton@test.com','Corben buxton','demo123');
+INSERT INTO USAGER VALUES('brianna.winter@test.com','Brianna Winter','demo123');
+
+Create CUSTOMER
+INSERT INTO CUSTOMER VALUES(1,'john.doe@test.com','123456', null, null);
+INSERT INTO CUSTOMER VALUES(2,'jane.doe@test.com','345678', null, null);
+
