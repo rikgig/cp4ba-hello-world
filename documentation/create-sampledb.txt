@@ -5,6 +5,9 @@ $ docker pull cytopia/mysql-5.7
 $ docker run -i \
     -p 127.0.0.1:3306:3306 \
     -e MYSQL_ROOT_PASSWORD=root123 \
+    -e MYSQL_USER=demo \
+    -e MYSQL_PASSWORD=demo123 \
+    -e MYSQL_DATABASE=sampledb \
     -t cytopia/mysql-5.7
 
 
