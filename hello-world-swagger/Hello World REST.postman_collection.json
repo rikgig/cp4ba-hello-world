@@ -2,14 +2,212 @@
 	"info": {
 		"_postman_id": "817514f8-b930-413c-928a-992f76dc9948",
 		"name": "Hello World REST",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "List Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/customer/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Customer by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/customer/id/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Customer by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/customer/email/john.doe@test.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/customer?id=12",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"customer"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"remi@ibm.com\",\r\n    \"dossierId\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/customer/update?id=14&processId=2072.12",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"customer",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "14"
+								},
+								{
+									"key": "processId",
+									"value": "2072.12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/customer/add?email=remi@ibm.com&dossierId=123456",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"customer",
+								"add"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "remi@ibm.com"
+								},
+								{
+									"key": "dossierId",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usager",
+			"item": [
+				{
+					"name": "List Usager",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/usager/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Usager by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/usager/email/john.doe@test.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Usager by email",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usager?email=remi@ibm.com",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usager"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "remi@ibm.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Usager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/customer/add?email=remi@ibm.com&dossierId=123456",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"customer",
+								"add"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "remi@ibm.com"
+								},
+								{
+									"key": "dossierId",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "Get Greeting",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": "{{baseURL}}/greeting"
 			},
 			"response": []
 		},
@@ -18,21 +216,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "http://hello-rest-test-baw.itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud/hello",
-					"protocol": "http",
-					"host": [
-						"hello-rest-test-baw",
-						"itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000",
-						"us-south",
-						"containers",
-						"appdomain",
-						"cloud"
-					],
-					"path": [
-						"hello"
-					]
-				}
+				"url": "{{baseURL}}/hello"
 			},
 			"response": []
 		},
@@ -42,15 +226,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://hello-rest-test-baw.itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud/hello?firstName=Remi&lastName=Cauchon",
-					"protocol": "http",
+					"raw": "{{baseURL}}/hello?firstName=Lucas&lastName=Cauchon",
 					"host": [
-						"hello-rest-test-baw",
-						"itzroks-6630025ezu-hfdywk-6ccd7f378ae819553d37d5f2ee142bd6-0000",
-						"us-south",
-						"containers",
-						"appdomain",
-						"cloud"
+						"{{baseURL}}"
 					],
 					"path": [
 						"hello"
@@ -58,7 +236,7 @@
 					"query": [
 						{
 							"key": "firstName",
-							"value": "Remi"
+							"value": "Lucas"
 						},
 						{
 							"key": "lastName",
