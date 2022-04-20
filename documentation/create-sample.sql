@@ -5,7 +5,7 @@ CREATE TABLE `USAGER` (
   PRIMARY KEY (`email`)
 );
 CREATE TABLE `CUSTOMER` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) DEFAULT NULL,
   `dossierId` varchar(12) DEFAULT NULL,
   `processId` varchar(12) DEFAULT NULL,
