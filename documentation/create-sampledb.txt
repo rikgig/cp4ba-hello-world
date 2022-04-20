@@ -42,8 +42,7 @@ mysql> show create table  CUSTOMER;
   `email` varchar(50) DEFAULT NULL,
   `dossierId` varchar(12) DEFAULT NULL,
   `processId` varchar(12) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 1 row in set (0.00 sec)
