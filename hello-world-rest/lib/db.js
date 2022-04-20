@@ -1,10 +1,15 @@
 var mysql = require('mysql');
 
+const config = require('../config.json');
+
+const { host, port, user, password, database } = config.database;
+console.log(host, port, user, password, database)
+
 var connection = mysql.createConnection({
-	host:'localhost',
-	user:'root',
-	password:'root123',
-	database:'sampledb'
+	host,
+	user,
+	password,
+	database
 });
 
 connection.connect(function(error){
