@@ -1,10 +1,13 @@
+// Imports
 var mysql = require('mysql2');
 
 const config = require('../config.json');
 
+// Load the config file
 const { host, port, user, password, database } = config.database;
 console.log(host, port, user, password, database)
 
+// Function createConnection
 var connection = mysql.createConnection({
 	host,
 	user,
@@ -12,6 +15,7 @@ var connection = mysql.createConnection({
 	database
 });
 
+// Fuction connect
 connection.connect(function(error){
 	if(!!error) {
 		console.log(error);
@@ -20,4 +24,5 @@ connection.connect(function(error){
 	}
 });
 
+// Exports 
 module.exports = connection;
