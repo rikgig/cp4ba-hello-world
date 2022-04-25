@@ -10,5 +10,6 @@ CREATE TABLE `CUSTOMER` (
   `dossierId` varchar(12) DEFAULT NULL,
   `processId` varchar(12) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
+  `pushtoken` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );

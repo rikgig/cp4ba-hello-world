@@ -42,7 +42,8 @@ mysql> show create table  CUSTOMER;
   `email` varchar(50) DEFAULT NULL,
   `dossierId` varchar(12) DEFAULT NULL,
   `processId` varchar(12) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT NULL
+  `status` tinyint(1) DEFAULT NULL,
+  `pushToken` varchar(100) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
 +----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 1 row in set (0.00 sec)
@@ -55,6 +56,6 @@ INSERT INTO USAGER VALUES('corben.buxton@test.com','Corben buxton','demo123');
 INSERT INTO USAGER VALUES('brianna.winter@test.com','Brianna Winter','demo123');
 
 Create CUSTOMER
-INSERT INTO CUSTOMER VALUES(1,'john.doe@test.com','123456', null, null);
-INSERT INTO CUSTOMER VALUES(2,'jane.doe@test.com','345678', null, null);
+INSERT INTO CUSTOMER VALUES(1,'john.doe@test.com','123456', null, null, null);
+INSERT INTO CUSTOMER VALUES(2,'jane.doe@test.com','345678', null, null, null);
 

@@ -28,6 +28,7 @@ CREATE TABLE `CUSTOMER` (
   `dossierId` varchar(12) DEFAULT NULL,
   `processId` varchar(12) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
+  `pushtoken` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +39,7 @@ CREATE TABLE `CUSTOMER` (
 
 LOCK TABLES `CUSTOMER` WRITE;
 /*!40000 ALTER TABLE `CUSTOMER` DISABLE KEYS */;
-INSERT INTO `CUSTOMER` VALUES (1,'john.doe@test.com','123456',NULL,NULL),(2,'jane.doe@test.com','345678',NULL,NULL);
+INSERT INTO `CUSTOMER` VALUES (1,'john.doe@test.com','123456',NULL,NULL,NULL),(2,'jane.doe@test.com','345678',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `CUSTOMER` ENABLE KEYS */;
 UNLOCK TABLES;
 
