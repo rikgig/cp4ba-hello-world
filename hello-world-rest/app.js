@@ -135,7 +135,7 @@ app.post("/customer/update", function (req, res) {
   if(dossierId && id){
     sql = "UPDATE CUSTOMER SET DOSSIERID = '" + dossierId +    "' WHERE ID = " +    id +    ";";
   }
-  if(pushToken && id){
+  if(email && id){
     sql = "UPDATE CUSTOMER SET EMAIL = '" + email +    "' WHERE ID = " +    id +    ";";
   }
 
