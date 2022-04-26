@@ -124,7 +124,7 @@ app.post("/customer/update", function (req, res) {
   let dossierId = req.query.dossierId;
   let processId = req.query.processId;
   let pushToken = req.query.pushToken;
-
+  console.log(id, email, dossierId, processId, pushToken)
   var sql;
   if(processId && id){
     sql = "UPDATE CUSTOMER SET PROCESSID = '" + processId +    "' WHERE ID = " +    id +    ";";
