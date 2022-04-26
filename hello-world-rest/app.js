@@ -23,6 +23,17 @@ app.get("/usager/email/:email", function (req, res) {
   });
 });
 
+app.get("/usager/auth", function (req, res) {
+  let email = req.query.email;
+  let password = req.query.password;
+
+  var search = "SELECT * from USAGER WHERE EMAIL='" + email + "' AND PASSWORD='"+password+"'";
+  dbConn.query(search, function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+});
+
 // DELETE a customer by ID
 app.delete("/usager", function (req, res) {
   let email = req.query.email;
