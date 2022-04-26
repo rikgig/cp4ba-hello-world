@@ -28,6 +28,7 @@ app.get("/usager/auth", function (req, res) {
   let password = req.query.password;
 
   var search = "SELECT * from USAGER WHERE EMAIL='" + email + "' AND PASSWORD='"+password+"'";
+  console.log(search)
   dbConn.query(search, function (err, result) {
     if (err) throw err;
     res.json(result);
