@@ -18,13 +18,13 @@ find the access-info section take the value of the **Business Automation Workflo
 
 **bastudio-access-info**
 ```
-Cloudpak Dashboard: https://cpd-cp4ba.itzroks-6630025ezu-xyl3xy-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud
-Business Automation Workplace: https://cpd-cp4ba.itzroks-6630025ezu-xyl3xy-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/bas/Workplace
-Business Automation Workflow External base URL: https://cpd-cp4ba.itzroks-6630025ezu-xyl3xy-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/bas/
-Business Automation Process Portal: https://cpd-cp4ba.itzroks-6630025ezu-xyl3xy-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/bas/ProcessPortal
-Business Automation Case Client: https://cpd-cp4ba.itzroks-6630025ezu-xyl3xy-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/icn/navigator/?desktop=baw
+Cloudpak Dashboard: https://cpd-cp4ba.itzroks-6630025ezu-p4vtr6-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud
+Business Automation Workplace: https://cpd-cp4ba.itzroks-6630025ezu-p4vtr6-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/bas/Workplace
+Business Automation Workflow External base URL: https://cpd-cp4ba.itzroks-6630025ezu-p4vtr6-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/bas/
+Business Automation Process Portal: https://cpd-cp4ba.itzroks-6630025ezu-p4vtr6-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/bas/ProcessPortal
+Business Automation Case Client: https://cpd-cp4ba.itzroks-6630025ezu-p4vtr6-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/icn/navigator/?desktop=baw
 
 User credentials:
   username: cp4admin
-  password: mypassword
+  password: password
 ```
