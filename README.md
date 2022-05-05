@@ -23,3 +23,9 @@ Deploy the image with Openshift use the Git
 Openshift - Developer Catalog
 
 MySQL - Templates - with persistent storage
+
+Connection - 
+  user = demo 
+  pwssword = demo123 
+  root password= root123 
+  database name=sampledb
