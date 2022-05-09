@@ -15,6 +15,17 @@ Here the swagger view of the Hello World REST API
 
 ### Deploy the nodejs Server on your Openshift Cluster
 
-TODO
+Deploy the image with Openshift use the Git
 
++Add Git Repository  -> From Git    /hello-world-rest    App = hello-world-rest
 
+#### Add database MySQL
+Openshift - Developer Catalog
+
+MySQL - Templates - with persistent storage
+
+Connection - 
+  user = demo 
+  pwssword = demo123 
+  root password= root123 
+  database name=sampledb

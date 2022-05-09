@@ -22,7 +22,7 @@ There is 2 Swagger server API unning on CP4BA related to Business Automation Wor
 To access the swagger api 
 > https://host_name:port_number/bpm/explorer
  
-To get the json doc format of the api **https://cluster_url//bpm/docs**
+To get the json doc format of the api **https://cluster_url/bpm/docs**
 
 ![cp4ba-hello-world/hello-world-swagger](images/baw-processes-rest-swagger.PNG)
 

@@ -1,0 +1,467 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a hello API",
+    "version": "1.0.1",
+    "title": "Hello World API",
+    "contact": {
+      "email": "remi.cauchon@ibm.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "hello-rest-test-hello-world.itzroks-6630025ezu-czi0fw-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Customer",
+      "description": "Customer Seibel"
+    },
+    {
+      "name": "Usager",
+      "description": "Usager Ldap"
+    },
+    {
+      "name": "Hello world",
+      "description": "greeting hello"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/customer/list": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "list customer",
+        "description": "list all customer",
+        "operationId": "customerList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "list all",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/customer/id/{id}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Search customer by id",
+        "description": "search customer",
+        "operationId": "customerSearchId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "pass as given id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "search customer by id",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/customer/email/{email}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Search customer by email",
+        "description": "search customer",
+        "operationId": "customerSearchEmail",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "pass as given email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "search customer by id",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/customer": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Deletes a customer by ID",
+        "description": "",
+        "operationId": "deleteCustomer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "description": "id of customer to delete"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid id supplied"
+          },
+          "404": {
+            "description": "Customer not found"
+          }
+        }
+      }
+    },
+    "/customer/update": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Update a customer by ID",
+        "description": "",
+        "operationId": "updateCustomer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "description": "id of customer to update"
+          },
+          {
+            "name": "processId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "processId of customer to update"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid id supplied"
+          },
+          "404": {
+            "description": "Customer not found"
+          }
+        }
+      }
+    },
+    "/customer/add": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Add a customer",
+        "description": "",
+        "operationId": "addCustomer",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "email of customer to supply"
+          },
+          {
+            "name": "dossierId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "dossier of customer to supply"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid parameters supplied"
+          },
+          "404": {
+            "description": "Usager not created"
+          }
+        }
+      }
+    },
+    "/usager/list": {
+      "get": {
+        "tags": [
+          "Usager"
+        ],
+        "summary": "list usager",
+        "description": "list all usager",
+        "operationId": "usagerList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "list all",
+            "schema": {
+              "$ref": "#/definitions/Usager"
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/usager/email/{email}": {
+      "get": {
+        "tags": [
+          "Usager"
+        ],
+        "summary": "search usager by email",
+        "description": "search usager",
+        "operationId": "usagerSearchEmail",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "email of usager to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Usager"
+            }
+          },
+          "400": {
+            "description": "Invalid eamil supplied"
+          }
+        }
+      }
+    },
+    "/usager/{email}": {
+      "delete": {
+        "tags": [
+          "Usager"
+        ],
+        "summary": "Deletes an usager",
+        "description": "",
+        "operationId": "deleteUsager",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "email of usager to return"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid email supplied"
+          },
+          "404": {
+            "description": "Usager not found"
+          }
+        }
+      }
+    },
+    "/usager/add": {
+      "post": {
+        "tags": [
+          "Usager"
+        ],
+        "summary": "Add an usager",
+        "description": "",
+        "operationId": "addUsager",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "email of usager to supply"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "name of usager to supply"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "password of usager to supply"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid parameters supplied"
+          },
+          "404": {
+            "description": "Usager not created"
+          }
+        }
+      }
+    },
+    "/greeting": {
+      "get": {
+        "tags": [
+          "Hello world"
+        ],
+        "summary": "get greeting from api",
+        "description": "Adds an item to the system",
+        "operationId": "greeting",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "greeting from api",
+            "schema": {
+              "$ref": "#/definitions/Greeting"
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/hello": {
+      "get": {
+        "tags": [
+          "Hello world"
+        ],
+        "summary": "greet with a name",
+        "description": "By passing firstName and lastName, you will be greeted with fullName\n",
+        "operationId": "hello",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "firstName",
+            "in": "query",
+            "description": "pass an optional given firstName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "lastName",
+            "in": "query",
+            "description": "pass an optional given lastName",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "greet the new person with fullname",
+            "schema": {
+              "$ref": "#/definitions/FullName"
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Customer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "example": 1
+        },
+        "dossierId": {
+          "type": "string",
+          "example": 123456
+        },
+        "status": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "Usager": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "remi@test.com"
+        },
+        "name": {
+          "type": "string",
+          "example": "Remi Cauchon"
+        },
+        "password": {
+          "type": "string",
+          "example": "XDR456G$"
+        }
+      }
+    },
+    "Greeting": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Hello World!"
+        }
+      }
+    },
+    "FullName": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "example": "John Doe"
+        }
+      }
+    }
+  }
+}

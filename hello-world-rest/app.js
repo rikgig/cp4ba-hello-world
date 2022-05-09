@@ -25,7 +25,19 @@ app.get("/usager/email/:email", function (req, res) {
   });
 });
 
-// DELETE a usager by ID
+app.get("/usager/auth", function (req, res) {
+  let email = req.query.email;
+  let password = req.query.password;
+
+  var search = "SELECT * from USAGER WHERE EMAIL='" + email + "' AND PASSWORD='"+password+"'";
+  console.log(search)
+  dbConn.query(search, function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+});
+
+// DELETE a customer by ID
 app.delete("/usager", function (req, res) {
   let email = req.query.email;
   var sql = "DELETE FROM USAGER WHERE EMAIL='" + email + "';";
@@ -97,6 +109,17 @@ app.get("/customer/id/:id", function (req, res) {
   });
 });
 
+
+app.get("/customer/pushToken/:processId", function (req, res) {
+  let processId = req.params.processId
+  var sql = "SELECT pushToken from CUSTOMER WHERE PROCESSID='"+processId+"';";
+  dbConn.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    res.json(result);
+  });
+});
+
 // SEARCH by EMAIL
 app.get("/customer/email/:email", function (req, res) {
   let email = req.params.email;
@@ -111,11 +134,25 @@ app.get("/customer/email/:email", function (req, res) {
 // UPDATE a Customer
 app.post("/customer/update", function (req, res) {
   let id = req.query.id;
-  //  let email = req.query.email;
-  //  let dossierId = req.query.dossierId;
+  let email = req.query.email;
+  let dossierId = req.query.dossierId;
   let processId = req.query.processId;
-
-  var sql = "UPDATE CUSTOMER SET PROCESSID = '" + processId +    "' WHERE ID = " +    id +    ";";
+  let pushToken = req.query.pushToken;
+  console.log(id, email, dossierId, processId, pushToken)
+  var sql;
+  if(processId && id){
+    sql = "UPDATE CUSTOMER SET PROCESSID = '" + processId +    "' WHERE ID = " +    id +    ";";
+  }
+  if(pushToken && id){
+    sql = "UPDATE CUSTOMER SET PUSHTOKEN = '" + pushToken +    "' WHERE ID = " +    id +    ";";
+  }
+  if(dossierId && id){
+    sql = "UPDATE CUSTOMER SET DOSSIERID = '" + dossierId +    "' WHERE ID = " +    id +    ";";
+  }
+  if(email && id){
+    sql = "UPDATE CUSTOMER SET EMAIL = '" + email +    "' WHERE ID = " +    id +    ";";
+  }
+  console.log(sql);
 
   dbConn.query(sql, function (err, result) {
     if (err) throw err;
@@ -128,6 +165,7 @@ app.post("/customer/update", function (req, res) {
     res.json(result);
   });
 });
+
 
 // DELETE a customer by ID
 app.get("/customer", function (req, res) {
