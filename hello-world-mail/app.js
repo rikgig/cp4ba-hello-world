@@ -11,33 +11,35 @@ app.use(myParser.urlencoded({extended : true}));
 //
 
 const sgMail = require('@sendgrid/mail');
-console.log("ENVIRONMENT: "+ process.env.ENVIRONMENT);
-console.log("SENDGRID API_KEY: "+ process.env.SENDGRID_API_KEY);
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(myParser.json());
 
-//const accountSid = process.env.TWILIO_ACCOUNT_SID;
-//const authToken = process.env.TWILIO_AUTH_TOKEN;
-const accountSid = 'ACb47581bf98ec4c469062998aaf3cdb25';
-const authToken = '63362a85d6ae91b8a7495ff184111ade';
-const client = require('twilio')(accountSid, authToken);
-
+const accountSid = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
+//const client = require('twilio')(accountSid, authToken);
+const fromMobile = process.env.TWILIO_FROM_MOBILE;
+//
+// REST API send "sms"
+//
 app.get("/sms", function(req, res) {
 
-  console.log("sending SMS");
-  client.messages
-  .create({
-     body: 'Message envoyer par mon Twilio SMS compte, Bonne journée Lucas',
-     from: '+13072882283',
-     to: '+15149735614'
-   })
-   .then(message => console.log(message.sid));
+  console.log("Sending SMS");
+  //client.messages
+  //.create({
+  //   body: 'Message envoyer par mon Twilio SMS compte, Bonne journée Lucas',
+  //   from: '\''+ fromMobile + '\'',
+  //   to: '+15143456767'
+  // })
+  // .then(message => console.log(message.sid));
 
   res.json({ name: "Sending sms to: hello" });
 });
 
-// Basic API /email
+//
+// REST API send "email"
+//
 app.post("/email", function (req, res) {
 
   console.log(req.body);
@@ -67,7 +69,6 @@ app.post("/email", function (req, res) {
       html: req.body.html
     };
 
-
   sgMail
     .send(msg)
     .then(() => {}, error => {
@@ -82,8 +83,7 @@ app.post("/email", function (req, res) {
 
 });
 
-
 // LISTEN ON PORT 8080
 app.listen(8080, function () {
-  console.log("Example app listening on port 8080!");
+  console.log("Hello World MAIL app listening on port 8080!");
 });
