@@ -11,6 +11,7 @@ Create the configmap, cm-hello-rest from the local file config.json
 Set the volume to deployment/hello-rest to mount /opt/app-root/src to the cm-hello-rest configmap
 
 in your local config.json file substitute  "host" : "localhost" with "mysql.test-hello-rest.svc"
+where the format is servicename.namespace.svc
 ```
 oc set volume dc/test-hello-rest --add -t configmap  --mount-path=/opt/app-root/src/config.json --sub-path config.json --name myvol --configmap-name cm-hello-rest
 ```
