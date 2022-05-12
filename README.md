@@ -1,5 +1,8 @@
 ﻿# cp4ba-hello-world
 
+## The mobile APP Git repository
+https://github.ibm.com/Maxime-Pavard/CNESST-maternite-demo
+
 ## Hello World Rest API
 
 In the directory hello-world-rest there is a small NodeJs application server which expose a small openAPI
