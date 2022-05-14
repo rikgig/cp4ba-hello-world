@@ -34,15 +34,15 @@ For BAC Case Manager Protocols, Import following files:
 * Hello BAW hello-case.postman_environment.json
 
 ### Case Management Applications
-From the file your OCP cluster select project **cp4ba**
-Click on you **Workload>ConfigMaps**
-find the _*-cp4ba-access-info_ Config Map
-Look for section **bastudio-access-info**
-Take the value of the **Cloudpak Dashboard** to access Business Automation Studio.
-Once defined and deployed at least once use the value of the **Business Automation Case Client** to access the cases.
+- From the file your OCP cluster select project **cp4ba**
+- Click on you **Workload>ConfigMaps**
+- find the _*-cp4ba-access-info_ Config Map
+- Look for section **bastudio-access-info**
+- Take the value of the **Cloudpak Dashboard** to access Business Automation Studio.
+- Once defined and deployed at least once use the value of the **Business Automation Case Client** to access the cases.
 
 Open following URL
-````
+```
 Cloudpak Dashboard: https://cpd-cp4ba.itzroks-6630025ezu-p4vtr6-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud
 
 Business Automation Case Client: https://cpd-cp4ba.itzroks-6630025ezu-p4vtr6-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud/icn/navigator/?desktop=baw
@@ -56,7 +56,7 @@ User credentials:
 
 * Set the **baseURL** to your cluster URL  add **bas/CaseManager** after your cluster name
 
-````
+```
 Cloudpak Dashboard: https://cpd-cp4ba.itzroks-6630025ezu-p4vtr6-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud
 
 User credentials:
