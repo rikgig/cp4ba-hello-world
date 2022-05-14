@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f3776446-a5c4-45d9-89d0-d25571d9cc0c",
+		"_postman_id": "9888bfa8-c477-46f9-98ba-7067153a9b96",
 		"name": "Hello BAW",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -355,6 +355,13 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "EIgfKeo9zHmVIUP3O2eN",
+								"username": "cp4admin"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -365,9 +372,113 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{}"
+							"raw": "{\n  \"refresh-groups\": false,\n  \"requested-lifetime\": 7200\n}"
 						},
-						"url": "{{sbaseURL}}/system/login"
+						"url": {
+							"raw": "{{sbaseURL}}/system/login",
+							"host": [
+								"{{sbaseURL}}"
+							],
+							"path": [
+								"system",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Case",
+			"item": [
+				{
+					"name": "GET method for the list of document classes resource",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "EIgfKeo9zHmVIUP3O2eN",
+								"username": "cp4admin"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scaseURL}}/CASEREST/v1/solution/{{solutionName}}/documenttypes?TargetObjectStore={{targetObjectStore}}",
+							"host": [
+								"{{scaseURL}}"
+							],
+							"path": [
+								"CASEREST",
+								"v1",
+								"solution",
+								"{{solutionName}}",
+								"documenttypes"
+							],
+							"query": [
+								{
+									"key": "TargetObjectStore",
+									"value": "{{targetObjectStore}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET method for the list of solutions resource",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "EIgfKeo9zHmVIUP3O2eN",
+								"username": "cp4admin"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{scaseURL}}/CASEREST/v1/solutions"
+					},
+					"response": []
+				},
+				{
+					"name": "GET method for the particular solution resource",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "EIgfKeo9zHmVIUP3O2eN",
+								"username": "cp4admin"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scaseURL}}/CASEREST/v1/solution/{{solutionName}}?TargetObjectStore={{targetObjectStore}}",
+							"host": [
+								"{{scaseURL}}"
+							],
+							"path": [
+								"CASEREST",
+								"v1",
+								"solution",
+								"{{solutionName}}"
+							],
+							"query": [
+								{
+									"key": "TargetObjectStore",
+									"value": "{{targetObjectStore}}"
+								}
+							]
+						}
 					},
 					"response": []
 				}
