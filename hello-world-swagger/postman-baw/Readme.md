@@ -68,8 +68,8 @@ For every URL set Basic Authorization with this name/password
 
 ### GET method for the list of document classes resource
 ### GET method for the particular solution resource
-Set path parameter **solutionName** accordingly
-Set query  parameter **targetObjectStore** accordingly
+- Set path parameter **solutionName** accordingly
+- Set also query parameter **targetObjectStore**
 
 Docs:
 https://www.ibm.com/docs/en/case-manager/5.3.3?topic=applications-developing-case-management-rest-protocols
