@@ -10,7 +10,13 @@ Base on this diagram
 
 ![cp4ba-hello-world](../images/userclientagent.PNG)
 
-But for my example, I have only one event process to send event
+## But for my example, I have only one event process to send event
+
+### Process receive
+![cp4ba-hello-world](../images/process-receive.PNG)
+
+### Service send
+![cp4ba-hello-world](../images/service-send-uca.PNG)
 
 The trick here to set a correllation ID on the send event process and listen for the same correllation ID on the receiving event
 
