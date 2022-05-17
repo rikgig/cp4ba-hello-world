@@ -44,3 +44,6 @@ You also need to do the "Data Mapping" for both event
 
 ### Data Mapping for receive event
 ![cp4ba-hello-world](../images/event-receive-datamapping.PNG)
+
+### Launching the DEMO
+to launch the event and receive an event watch the short video mentionned at the beginning of this article
