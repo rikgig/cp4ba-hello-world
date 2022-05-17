@@ -2,7 +2,7 @@
 # Documentation on Hello-world Event 
 
 Video on youtube
-(here}[https://www.youtube.com/watch?v=82vjt4DT0bI]
+[here](https://www.youtube.com/watch?v=82vjt4DT0bI)
 
 This directory is a simple event in BAW with the UserClientAgent
 
