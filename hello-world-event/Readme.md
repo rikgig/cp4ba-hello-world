@@ -26,8 +26,11 @@ The trick here to set a correllation ID on the send event process and listen for
     - correl1   check the default value box "Has default" set it to "123456"
     - data1     check the default value box "Has default" set it to "Your Name"
 
+![cp4ba-hello-world](../images/event-send-variable.PNG)
+
 ### In the Processes tab in the left panel select the 
  + Create 2 variables private
     - correlID  check the default value box "Has default" set it to "123456"
     - output2   leave it has is
-
+    - 
+![cp4ba-hello-world](../images/event-receive-variable.PNG)
