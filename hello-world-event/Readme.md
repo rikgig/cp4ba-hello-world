@@ -40,7 +40,7 @@ click on the "select" button and choose "UndercoverAgent" and if there is none c
 
 You also need to do the "Data Mapping" for both event
 ### Data Mapping for send event
-![cp4ba-hello-world](../images/event-receive-datamapping.PNG)
+![cp4ba-hello-world](../images/event-send-datamapping.PNG)
 
 ### Data Mapping for receive event
 ![cp4ba-hello-world](../images/event-receive-datamapping.PNG)
