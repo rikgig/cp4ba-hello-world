@@ -4,7 +4,10 @@
 Video on youtube
 [here](https://www.youtube.com/watch?v=82vjt4DT0bI)
 
-This directory is a simple event in BAW with the UserClientAgent
+## Deploy
+upload the file test-event-3.twx in your BAW automation interface
+
+## This directory is a simple event in BAW with the UserClientAgent
 
 Base on this diagram
 
