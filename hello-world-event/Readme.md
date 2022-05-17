@@ -34,3 +34,13 @@ The trick here to set a correllation ID on the send event process and listen for
     - output2   leave it has is
     - 
 ![cp4ba-hello-world](../images/event-receive-variable.PNG)
+
+### Assign the UCA to both send and receive message
+click on the "select" button and choose "UndercoverAgent" and if there is none create one with the "new" button
+
+You also need to do the "Data Mapping" for both event
+### Data Mapping for send event
+![cp4ba-hello-world](../images/event-receive-datamapping.PNG)
+
+### Data Mapping for receive event
+![cp4ba-hello-world](../images/event-receive-datamapping.PNG)
