@@ -20,7 +20,7 @@ There is 2 Swagger server API unning on CP4BA related to Business Automation Wor
 [IBM Business Automation Workflow Process REST APIs](https://www.ibm.com/docs/en/baw/20.x?topic=apis-business-automation-workflow-process-rest)
 
 To access the swagger api 
-> https://host_name:port_number/bpm/explorer
+> https://host_name:port_number/bpm/explorer or > https://host_name:port_number/bas/bpm/explorer
  
 To get the json doc format of the api **https://cluster_url/bpm/docs**
 
