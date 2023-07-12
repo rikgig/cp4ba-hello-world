@@ -186,18 +186,19 @@ app.get("/greeting", function (req, res) {
 app.get("/hello", function (req, res) {
   var firstName = req.query.firstName;
   if (!firstName) {
-    firstName = "John";
+    firstName = "JOHN";
   }
   var lastName = req.query.lastName;
 
   if (!lastName) {
-    lastName = "Doe";
+    lastName = "DOE";
   }
   console.log("FirstName: ", firstName);
   console.log("LaatName: ", lastName);
 
   var fullName = firstName + " " + lastName;
-  res.json({ fullName: fullName });
+  var capFullName = fullName.toUpperCase();
+  res.json({ fullName: capFullName });
 });
 
 // LISTEN ON PORT 8080
